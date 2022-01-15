@@ -12,7 +12,8 @@ export function Note({ title = '', date = '', content = '', ...props }) {
       <Text
         type="main"
         marginY-4
-        dangerouslySetInnerHTML={{ __html: content }}></Text>
+        dangerouslySetInnerHTML={{ __html: content }}
+      ></Text>
     </Spacery>
   )
 }

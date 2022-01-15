@@ -13,15 +13,17 @@ body {
   box-sizing: border-box;
 }
 
-body {
+:root {
   --base: var(--zinc-100);
   --surface: var(--zinc-200);
   --text: var(--zinc-600);
   --dim: var(--zinc-400);
   --dimmer: var(--zinc-300);
-  --accent: #e5c07b;
+  --accent: #4f46e5;
   --font: 'Inter', sans-serif;
+}
 
+body {
   background-color: var(--base);
   color: var(--text);
   max-width: 900px;
@@ -33,7 +35,7 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  font-style: italic;
+  font-weight: 400;
 }
 
 a:hover {
@@ -56,7 +58,7 @@ main {
 code {
   font-family: monospace;
   display: inline-block;
-  font-weight: 600;
+  font-weight: 400;
   padding-left: 8px;
   padding-right: 8px;
   border-radius: 4px;
@@ -72,12 +74,10 @@ pre.code > code {
   background: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    --base: var(--zinc-900);
-    --surface: var(--zinc-800);
-    --text: var(--zinc-300);
-    --dim: var(--zinc-500);
-    --dimmer: var(--zinc-600);
-  }
+[data-theme='dark'] {
+  --base: var(--zinc-900);
+  --surface: var(--zinc-800);
+  --text: var(--zinc-300);
+  --dim: var(--zinc-500);
+  --dimmer: var(--zinc-600);
 }
