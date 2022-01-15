@@ -42,7 +42,9 @@ a:hover {
 }
 
 p,
-article {
+article,
+main {
+  font-weight: 200;
   font-size: 16px;
   line-height: calc(16px * 1.5);
 }
