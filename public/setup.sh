@@ -10,4 +10,4 @@ createAlias(){
 
 
 clone barelyhuman/thoughts ~/thoughts
-createAlias ~/.zshrc
+createAlias ~/.aliases
