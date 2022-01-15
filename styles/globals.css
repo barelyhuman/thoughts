@@ -1,0 +1,79 @@
+@import url('https://unpkg.com/zinccolors@0.0.1/css/zinc.min.css');
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --base: var(--zinc-100);
+  --surface: var(--zinc-200);
+  --text: var(--zinc-600);
+  --dim: var(--zinc-400);
+  --dimmer: var(--zinc-300);
+  --accent: #e5c07b;
+
+  background-color: var(--base);
+  color: var(--text);
+  max-width: 900px;
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-style: italic;
+}
+
+a:hover {
+  text-underline-offset: 4px;
+  text-decoration: underline;
+}
+
+p,
+article {
+  font-size: 0.95rem;
+  line-height: calc(0.95rem * 1.5);
+}
+
+.text-dim {
+  color: var(--dim);
+}
+
+code {
+  font-family: monospace;
+  display: inline-block;
+  font-weight: 600;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+pre.code {
+  padding: 8px;
+  background: var(--surface);
+  border-radius: 4px;
+}
+pre.code > code {
+  background: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --base: var(--zinc-900);
+    --surface: var(--zinc-800);
+    --text: var(--zinc-100);
+    --dim: var(--zinc-500);
+    --dimmer: var(--zinc-600);
+  }
+}
