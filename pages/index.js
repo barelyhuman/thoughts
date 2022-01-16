@@ -6,9 +6,6 @@ import { Spacery } from 'spacery'
 export default function NotesList({ notes }) {
   return (
     <>
-      <div align="right">
-        <ThemeToggle />
-      </div>
       <Spacery paddingY-100>
         {notes.map((i) => {
           return (
@@ -17,7 +14,7 @@ export default function NotesList({ notes }) {
               title={i.title}
               date={i.timeString}
               content={i.htmlContent}
-              marginB-50
+              marginB-100
             />
           )
         })}

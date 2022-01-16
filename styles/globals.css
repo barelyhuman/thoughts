@@ -14,12 +14,20 @@ body {
 }
 
 :root {
-  --base: var(--zinc-100);
-  --surface: var(--zinc-200);
-  --text: var(--zinc-600);
-  --dim: var(--zinc-400);
-  --dimmer: var(--zinc-300);
+  /* the brightest color */
+  --bright: var(--zinc-50);
+  /* the darkest color */
+  --dark: var(--zinc-900);
+
+  /* set of colors that control visual elements */
+  --base: var(--zinc-900);
+  --surface: var(--zinc-800);
+  --text: var(--zinc-400);
+  --dim: var(--zinc-500);
+  --dimmer: var(--zinc-600);
   --accent: #4f46e5;
+
+  /* fonts */
   --font: 'Inter', sans-serif;
 }
 
@@ -33,22 +41,23 @@ body {
 }
 
 a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--text);
+  text-decoration: underline;
   font-weight: 400;
 }
 
 a:hover {
-  text-underline-offset: 4px;
-  text-decoration: underline;
+  color: var(--bright);
 }
 
 p,
 article,
 main {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 16px;
   line-height: calc(16px * 1.5);
+  margin: 8px 0px;
+  padding: 0px;
 }
 
 .text-dim {
@@ -72,12 +81,4 @@ pre.code {
 }
 pre.code > code {
   background: none;
-}
-
-[data-theme='dark'] {
-  --base: var(--zinc-900);
-  --surface: var(--zinc-800);
-  --text: var(--zinc-300);
-  --dim: var(--zinc-500);
-  --dimmer: var(--zinc-600);
 }
