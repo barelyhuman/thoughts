@@ -43,6 +43,7 @@ body {
 a {
   color: var(--text);
   text-decoration: underline;
+  text-underline-offset: 4px;
   font-weight: 400;
 }
 

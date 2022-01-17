@@ -5,7 +5,7 @@ clone(){
 }
 
 createAlias(){
-    echo "alias newthought=$HOME/thoughts/new.sh" >> $1
+    echo "alias newthought=\"cd $HOME/thoughts;./new.sh\"" >> $1
 }
 
 
