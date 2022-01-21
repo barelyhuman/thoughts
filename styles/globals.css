@@ -26,6 +26,7 @@ body {
   --dim: var(--zinc-500);
   --dimmer: var(--zinc-600);
   --accent: #4f46e5;
+  --success: #98c379;
 
   /* fonts */
   --font: 'Inter', sans-serif;
@@ -82,4 +83,17 @@ pre.code {
 }
 pre.code > code {
   background: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.nullify-space {
+  margin: 0;
+  padding: 0;
 }

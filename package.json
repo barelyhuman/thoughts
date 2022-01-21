@@ -1,27 +1,57 @@
 {
-  "name": "notes",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "fix": "prettier --write ."
-  },
-  "dependencies": {
-    "next": "12.0.8",
-    "next-themes": "^0.0.15",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "dayjs": "^1.10.7",
-    "eslint": "8.6.0",
-    "eslint-config-next": "12.0.8",
-    "eslint-config-prettier": "^8.3.0",
-    "lolight": "^1.4.0",
-    "prettier": "^2.5.1",
-    "snarkdown": "^2.0.0",
-    "spacery": "^0.0.6"
-  }
+	"name": "notes",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "xo",
+		"fix": "prettier --write ."
+	},
+	"dependencies": {
+		"next": "12.0.8",
+		"next-themes": "^0.0.15",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	},
+	"devDependencies": {
+		"dayjs": "^1.10.7",
+		"eslint": "8.6.0",
+		"eslint-config-next": "12.0.8",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-config-xo": "^0.39.0",
+		"eslint-config-xo-react": "^0.26.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"lolight": "^1.4.0",
+		"prettier": "^2.5.1",
+		"prop-types": "^15.8.1",
+		"snarkdown": "^2.0.0",
+		"spacery": "^0.0.6",
+		"xo": "^0.47.0"
+	},
+	"prettier": {
+		"bracketSpacing": false,
+		"semi": false,
+		"singleQuote": true,
+		"trailingComma": "es5",
+		"useTabs": true
+	},
+	"eslintConfig": {
+		"extends": [
+			"next/core-web-vitals",
+			"xo"
+		]
+	},
+	"xo": {
+		"prettier": true,
+		"extends": "xo-react",
+		"rules": {
+			"unicorn/prefer-module": "off"
+		},
+		"env": [
+			"es6",
+			"browser"
+		]
+	}
 }
