@@ -44,7 +44,7 @@ const ScrollUp = () => {
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						box-shadow: 0 2px 4px rgba(0, 0, 0.12);
+						box-shadow: 1px 1px 3px rgba(0, 0, 0.12);
 						color: var(--text);
 						transition: opacity 1s ease, background-color 1s ease;
 					}
