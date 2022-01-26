@@ -19,6 +19,7 @@ const NotesList = ({notes}) => {
 							marginB-100
 							title={i.title}
 							date={i.timeString}
+							idRef={i.date}
 							content={i.htmlContent}
 						/>
 					)

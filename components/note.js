@@ -3,10 +3,10 @@ import {Spacery} from 'spacery'
 import pt from 'prop-types'
 import {Text} from './text.js'
 
-export const Note = ({date = '', content = '', ...props}) => {
+export const Note = ({date = '', content = '', idRef, ...props}) => {
 	return (
 		<Spacery {...props}>
-			<Text margin-0 padding-0 type="p">
+			<Text margin-0 padding-0 type="p" id={idRef}>
 				<Text type="small" className="text-dim">
 					{date}
 				</Text>
