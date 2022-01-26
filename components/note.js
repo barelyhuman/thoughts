@@ -6,11 +6,13 @@ import {Text} from './text.js'
 export const Note = ({date = '', content = '', idRef, ...props}) => {
 	return (
 		<Spacery {...props}>
-			<Text margin-0 padding-0 type="p" id={idRef}>
-				<Text type="small" className="text-dim">
-					{date}
+			<a href={'#' + idRef} className="no-underline">
+				<Text margin-0 padding-0 type="p" id={idRef}>
+					<Text type="small" className="text-dim">
+						{date}
+					</Text>
 				</Text>
-			</Text>
+			</a>
 			<Text marginY-4 type="main" dangerouslySetInnerHTML={{__html: content}} />
 		</Spacery>
 	)

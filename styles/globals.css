@@ -3,97 +3,101 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
-  /* the brightest color */
-  --bright: var(--zinc-50);
-  /* the darkest color */
-  --dark: var(--zinc-900);
+	/* the brightest color */
+	--bright: var(--zinc-50);
+	/* the darkest color */
+	--dark: var(--zinc-900);
 
-  /* set of colors that control visual elements */
-  --base: var(--zinc-900);
-  --surface: var(--zinc-800);
-  --text: var(--zinc-400);
-  --dim: var(--zinc-500);
-  --dimmer: var(--zinc-600);
-  --accent: #4f46e5;
-  --success: #98c379;
+	/* set of colors that control visual elements */
+	--base: var(--zinc-900);
+	--surface: var(--zinc-800);
+	--text: var(--zinc-400);
+	--dim: var(--zinc-500);
+	--dimmer: var(--zinc-600);
+	--accent: #4f46e5;
+	--success: #98c379;
 
-  /* fonts */
-  --font: 'Inter', sans-serif;
+	/* fonts */
+	--font: 'Inter', sans-serif;
 }
 
 body {
-  background-color: var(--base);
-  color: var(--text);
-  max-width: 900px;
-  font-family: var(--font);
-  margin: 0 auto;
-  padding: 16px;
+	background-color: var(--base);
+	color: var(--text);
+	max-width: 900px;
+	font-family: var(--font);
+	margin: 0 auto;
+	padding: 16px;
 }
 
 a {
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-weight: 400;
+	color: var(--text);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	font-weight: 400;
 }
 
 a:hover {
-  color: var(--bright);
+	color: var(--bright);
 }
 
 p,
 article,
 main {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: calc(16px * 1.5);
-  margin: 8px 0px;
-  padding: 0px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: calc(16px * 1.5);
+	margin: 8px 0px;
+	padding: 0px;
 }
 
 .text-dim {
-  color: var(--dim);
+	color: var(--dim);
 }
 
 code {
-  font-family: monospace;
-  display: inline-block;
-  font-weight: 400;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 4px;
-  background: var(--surface);
+	font-family: monospace;
+	display: inline-block;
+	font-weight: 400;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 4px;
+	background: var(--surface);
 }
 
 pre.code {
-  padding: 8px;
-  background: var(--surface);
-  border-radius: 4px;
+	padding: 8px;
+	background: var(--surface);
+	border-radius: 4px;
 }
 pre.code > code {
-  background: none;
+	background: none;
 }
 
 .flex {
-  display: flex;
+	display: flex;
 }
 
 .ml-auto {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .nullify-space {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.no-underline {
+	text-decoration: none;
 }
