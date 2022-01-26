@@ -7,10 +7,6 @@ import {getNotes} from 'lib/get-notes'
 import {Spacery} from 'spacery'
 import PropTypes from 'prop-types'
 
-NotesList.propTypes = {
-	notes: PropTypes.array,
-}
-
 const NotesList = ({notes}) => {
 	return (
 		<>
@@ -41,6 +37,10 @@ export function getStaticProps(_) {
 			notes: allNotes,
 		},
 	}
+}
+
+NotesList.propTypes = {
+	notes: PropTypes.array,
 }
 
 export default NotesList

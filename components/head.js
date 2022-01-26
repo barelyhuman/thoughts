@@ -1,10 +1,6 @@
 import React from 'react'
-import NextHead from 'next/head.js'
+import NextHead from 'next/head'
 import pt from 'prop-types'
-
-Head.propTypes = {
-	children: pt.any,
-}
 
 export const Head = ({children}) => {
 	return (
@@ -34,4 +30,8 @@ export const Head = ({children}) => {
 			{children}
 		</NextHead>
 	)
+}
+
+Head.propTypes = {
+	children: pt.any,
 }

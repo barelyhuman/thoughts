@@ -7,11 +7,6 @@ import '../styles/code.css'
 import lolight from 'lolight'
 import pt from 'prop-types'
 
-MyApp.propTypes = {
-	Component: pt.any,
-	pageProps: pt.any,
-}
-
 const MyApp = ({Component, pageProps}) => {
 	useEffect(() => {
 		lolight('.code')
@@ -24,6 +19,11 @@ const MyApp = ({Component, pageProps}) => {
 			</ThemeProvider>
 		</>
 	)
+}
+
+MyApp.propTypes = {
+	Component: pt.any,
+	pageProps: pt.any,
 }
 
 export default MyApp
