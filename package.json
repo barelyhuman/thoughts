@@ -9,7 +9,6 @@
 		"fix": "prettier --write ."
 	},
 	"dependencies": {
-		"flexery": "https://github.com/barelyhuman/flexery.git",
 		"next": "12.0.8",
 		"next-themes": "^0.0.15",
 		"react": "17.0.2",
@@ -26,7 +25,8 @@
 		"prop-types": "^15.8.1",
 		"snarkdown": "^2.0.0",
 		"spacery": "^0.0.6",
-		"xo": "^0.47.0"
+		"xo": "^0.47.0",
+		"flexery": "0.0.1"
 	},
 	"prettier": {
 		"bracketSpacing": false,
