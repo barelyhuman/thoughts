@@ -1,14 +1,17 @@
 import React from 'react'
 import Image from 'next/image.js'
+import {Flexery} from 'flexery'
 
 const Header = () => {
 	return (
 		<>
-			<header className="flex">
-				<Image alt="logo" height={24} width={24} src="/logo.svg" />
-				<div className="ml-auto">
-					<a href="#about">About</a>
-				</div>
+			<header>
+				<Flexery flex flex-1 justBetween>
+					<Image alt="logo" height={24} width={24} src="/logo.svg" />
+					<div>
+						<a href="#about">About</a>
+					</div>
+				</Flexery>
 			</header>
 			<style jsx>
 				{`
