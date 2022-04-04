@@ -9,6 +9,13 @@ export const Head = ({children}) => {
 			<meta name="title" content="Thoughts by Reaper" />
 			<meta name="description" content="Exactly what the title says" />
 
+			<link
+				rel="alternate"
+				type="application/rss+xml"
+				title="RSS Feed for reaper.im"
+				href="/rss.xml"
+			/>
+
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://thoughts.reaper.im/" />
 			<meta property="og:title" content="Thoughts by Reaper" />

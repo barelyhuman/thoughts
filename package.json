@@ -20,13 +20,14 @@
 		"eslint-config-xo-react": "^0.26.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"flexery": "0.0.1",
 		"lolight": "^1.4.0",
 		"prettier": "^2.5.1",
 		"prop-types": "^15.8.1",
+		"rss-generator": "^0.0.3",
 		"snarkdown": "^2.0.0",
 		"spacery": "^0.0.6",
-		"xo": "^0.47.0",
-		"flexery": "0.0.1"
+		"xo": "^0.47.0"
 	},
 	"prettier": {
 		"bracketSpacing": false,

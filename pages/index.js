@@ -6,6 +6,7 @@ import ScrollUp from 'components/scroll-up'
 import {getNotes} from 'lib/get-notes'
 import {Spacery} from 'spacery'
 import PropTypes from 'prop-types'
+import {generateRSS} from 'lib/generate-rss'
 
 const NotesList = ({notes}) => {
 	return (
@@ -33,6 +34,10 @@ const NotesList = ({notes}) => {
 
 export function getStaticProps(_) {
 	const allNotes = getNotes()
+
+	// also generate rss for the same
+	generateRSS()
+
 	return {
 		props: {
 			notes: allNotes,
