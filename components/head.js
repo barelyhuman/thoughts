@@ -12,7 +12,7 @@ export const Head = ({children}) => {
 			<link
 				rel="alternate"
 				type="application/rss+xml"
-				title="RSS Feed for reaper.im"
+				title="Thoughts by reaper"
 				href="/rss.xml"
 			/>
 
