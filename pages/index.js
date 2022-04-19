@@ -27,7 +27,6 @@ const NotesList = ({notes}) => {
 				})}
 			</Spacery>
 			<ScrollUp />
-			<About />
 		</>
 	)
 }

@@ -8,9 +8,6 @@ const Header = () => {
 			<header>
 				<Flexery flex flex-1 justBetween>
 					<Image alt="logo" height={24} width={24} src="/logo.svg" />
-					<div>
-						<a href="#about">About</a>
-					</div>
 				</Flexery>
 			</header>
 			<style jsx>
