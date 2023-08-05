@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+
+const tsConfigPaths = require('@esbuild-plugins/tsconfig-paths').default
+const { spawn } = require('child_process')
+const { build } = require('esbuild')
+const { readdir, cp } = require('fs/promises')
+const { join } = require('path')
+const { watch } = require('chokidar')
+const preactIslands =
+  require('@barelyhuman/preact-island-plugins/esbuild').default
+
+const args = process.argv.slice(2)
+const filename = args[0]
+
+const isDev = args.includes('--dev')
+
+main()
+
+async function main() {
+  let running
+  if (isDev) {
+    const watcher = watch('./src/**/*', {
+      usePolling: true,
+    })
+
+    watcher.on('change', async () => {
+      console.log('Changed..., rebuilding')
+      setTimeout(() => {
+        running.kill()
+        if (running.killed) {
+          transform().then(d => (running = d))
+        }
+      }, 500)
+    })
+  }
+
+  running = await transform()
+  process.on('SIGTERM', () => {
+    running && running.kill()
+  })
+}
+
+async function transform() {
+  await build({
+    entryPoints: [filename],
+    packages: 'external',
+    bundle: true,
+    format: 'cjs',
+    platform: 'node',
+    jsx: 'automatic',
+    loader: {
+      '.js': 'jsx',
+    },
+    jsxImportSource: 'preact',
+    tsconfigRaw: {
+      compilerOptions: {
+        experimentalDecorators: true,
+      },
+    },
+    target: 'node16',
+    outdir: 'dist',
+    plugins: [
+      tsConfigPaths({ tsconfig: './tsconfig.json' }),
+      preactIslands({
+        rootDir: '.',
+        atomic: true,
+        baseURL: '/public/client',
+        hash: true,
+        bundleClient: {
+          outDir: './dist/public/client',
+        },
+      }),
+    ],
+  })
+
+  // Copy Public
+  const files = await readdir('./src/public')
+  for (let file of files) {
+    const basePath = join(__dirname, 'src', 'public', file)
+    const destPath = join(__dirname, 'dist', 'public', file)
+    await cp(basePath, destPath, {
+      recursive: true,
+    })
+  }
+
+  // load env
+  require('dotenv').config('./.env')
+
+  // spawn task
+  const spawnStream = spawn('node', ['./dist/server.js'])
+
+  spawnStream.stdout.on('data', d => {
+    console.log(Buffer.from(d).toString('utf8'))
+  })
+
+  spawnStream.stderr.on('data', d => {
+    console.log(Buffer.from(d).toString('utf8'))
+  })
+
+  return spawnStream
+}
