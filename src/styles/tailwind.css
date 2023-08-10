@@ -1,0 +1,44 @@
+@import url(https://fonts.bunny.net/css?family=Inter:400,600);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans;
+}
+
+.btn {
+  @apply text-sm px-4 py-1 rounded-md border-2 text-zinc-600 border-zinc-200 bg-zinc-200 hover:bg-transparent;
+}
+
+.article-container {
+  @apply my-10;
+}
+
+.article {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.article h1,
+.article h2,
+.article h3,
+.article h4 {
+  @apply font-semibold;
+}
+
+.article p {
+  @apply pb-4;
+}
+
+.article ul {
+  @apply pl-4;
+}
+
+.article ul > li {
+  @apply list-disc;
+}
+
+.input {
+  @apply border rounded-md border-zinc-400 focus:border-zinc-900 resize-none w-full min-h-[250px];
+}
