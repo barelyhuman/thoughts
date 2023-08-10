@@ -6,8 +6,7 @@ const { build } = require('esbuild')
 const { readdir, cp } = require('fs/promises')
 const { join } = require('path')
 const { watch } = require('chokidar')
-const preactIslands =
-  require('@barelyhuman/preact-island-plugins/esbuild').default
+const preactIslands = require('@barelyhuman/preact-island-plugins/esbuild')
 
 const args = process.argv.slice(2)
 const filename = args[0]
@@ -52,24 +51,19 @@ async function transform() {
       '.js': 'jsx',
     },
     jsxImportSource: 'preact',
-    tsconfigRaw: {
-      compilerOptions: {
-        experimentalDecorators: true,
-      },
-    },
     target: 'node16',
     outdir: 'dist',
     plugins: [
-      tsConfigPaths({ tsconfig: './tsconfig.json' }),
       preactIslands({
         rootDir: '.',
         atomic: true,
         baseURL: '/public/client',
-        hash: true,
-        bundleClient: {
-          outDir: './dist/public/client',
+        tsconfig: './tsconfig.json',
+        client: {
+          output: './dist/public/client',
         },
       }),
+      tsConfigPaths({ tsconfig: './tsconfig.json' }),
     ],
   })
 
